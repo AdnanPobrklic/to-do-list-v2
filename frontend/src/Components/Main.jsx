@@ -6,6 +6,7 @@ import io from "socket.io-client";
 import AddTodoForm from "./AddTodoForm";
 import MainMenu from "./MainMenu";
 import TodoList from "./TodoList";
+import ClockLoader from "react-spinners/ClockLoader";
 
 export default function Main() {
     const [socket, setSocket] = useState(null);
@@ -24,6 +25,7 @@ export default function Main() {
     const [selectedRecurring, setSelectedRecurring] = useState("");
     const categoryFormRef = useRef(null);
     const [filteredCategory, setFilteredCategory] = useState("all");
+    const [isLoading, setIsLoading] = useState(true);
 
     const handleInputChange = (event) => {
         setTask(event.target.value);
@@ -245,6 +247,8 @@ export default function Main() {
                 setShowWarning(
                     "There has been an error fetching your saved todos"
                 );
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -307,7 +311,15 @@ export default function Main() {
         };
     }, [socket]);
 
-    return (
+    return isLoading ? (
+        <div className="w-full grow flex flex-col gap-5 items-center justify-center text-center px-5">
+            <p>
+                Please wait few minutes until our backend server activates
+                (spinned off due to inactivity)
+            </p>
+            <ClockLoader color="#fff" />
+        </div>
+    ) : (
         <main className="w-full grow flex flex-col gap-5 pt-[25px] xl:pt-[50px]">
             <AddTodoForm
                 handleTodoSubmit={handleTodoSubmit}
