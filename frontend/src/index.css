@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: rgb(1, 86, 95);
+
+    background: -moz-linear-gradient(
+        0deg,
+        rgba(1, 86, 95, 1) 0%,
+        rgba(1, 157, 150, 1) 100%
+    );
+
+    background: -webkit-linear-gradient(
+        0deg,
+        rgba(1, 86, 95, 1) 0%,
+        rgba(1, 157, 150, 1) 100%
+    );
+
+    background: linear-gradient(
+        0deg,
+        rgba(1, 86, 95, 1) 0%,
+        rgba(1, 157, 150, 1) 100%
+    );
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01565f",endColorstr="#019d96",GradientType=1);
+}
