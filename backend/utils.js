@@ -40,6 +40,11 @@ const handleRecurringTask = async (todo) => {
     }
 };
 
+const handleErrorResponse = (res, statusCode, message) => {
+    return res.status(statusCode).json({ message });
+};
+
 module.exports = {
     handleRecurringTask,
+    handleErrorResponse,
 };

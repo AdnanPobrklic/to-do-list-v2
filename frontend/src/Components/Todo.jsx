@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import EditModal from "./EditModal";
+import IconTag from "./IconTag";
 
 export default function Todo({
     todo,
@@ -63,24 +64,24 @@ export default function Todo({
                                 handleToDoFavouration(todo.identificator)
                             }
                         >
-                            <i
+                            <IconTag
                                 className={`fa-solid fa-star md:hover:text-yellow-400 transition-all cursor-pointer ${
                                     todo.favourited ? "text-yellow-300" : ""
                                 }`}
-                            ></i>
+                            />
                         </button>
                         <button
                             onClick={() =>
                                 setShowEditModal((prevState) => !prevState)
                             }
                         >
-                            <i className="fa-solid fa-pen-to-square md:hover:text-gray-400 transition-all cursor-pointer "></i>
+                            <IconTag className="fa-solid fa-pen-to-square md:hover:text-gray-400 transition-all cursor-pointer " />
                         </button>
                     </>
                 )}
 
                 <button onClick={() => handleDelete(todo.identificator)}>
-                    <i className="fa-solid fa-trash-can md:hover:text-red-400 transition-all cursor-pointer "></i>
+                    <IconTag className="fa-solid fa-trash-can md:hover:text-red-400 transition-all cursor-pointer " />
                 </button>
             </div>
             <EditModal

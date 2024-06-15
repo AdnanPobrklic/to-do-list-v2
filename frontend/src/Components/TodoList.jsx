@@ -1,4 +1,6 @@
+import React from "react";
 import Todo from "./Todo";
+import IconTag from "./IconTag";
 
 export default function TodoList({
     filteredTaskList,
@@ -75,7 +77,7 @@ export default function TodoList({
                 </>
             ) : (
                 <p className="w-full text-center pt-[100px]">
-                    <i className="fa-solid fa-arrow-down text-5xl lg:text-6xl xl:text-7xl"></i>
+                    <IconTag className="fa-solid fa-arrow-down text-5xl lg:text-6xl xl:text-7xl" />
                 </p>
             )}
         </>

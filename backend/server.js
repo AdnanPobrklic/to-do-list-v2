@@ -1,36 +1,15 @@
 require("dotenv").config();
-const http = require("http");
-const { initializeSocket } = require("./sockets/socketManager");
 const express = require("express");
-const { default: mongoose } = require("mongoose");
+const connectDB = require("./config/db");
+const { configureServer, startServer } = require("./config/serverConfig");
+
 const app = express();
-const server = http.createServer(app);
-const port = process.env.PORT || 3000;
-const dbUri = process.env.DB_URI || "mongodb://localhost:27017";
-const clientUrl = process.env.CLIENT_URL || "http://localhost:5173";
-const todoRoutes = require("./routes/todoRoutes");
-const cors = require("cors");
+const { server, port } = configureServer(app);
 
-console.log(clientUrl);
-app.use(express.json());
-app.use(
-    cors({
-        origin: clientUrl,
-        methods: ["GET", "POST", "PATCH", "DELETE"],
-        credentials: true,
-    })
-);
-
-mongoose
-    .connect(dbUri)
+connectDB()
     .then(() => {
-        server.listen(port, () => {
-            initializeSocket(server);
-            console.log(`Server running on port ${port}`);
-        });
+        startServer(server, port);
     })
     .catch((err) => {
-        console.log(err);
+        console.error(`Error starting server: ${err.message}`);
     });
-
-app.use("/api", todoRoutes);

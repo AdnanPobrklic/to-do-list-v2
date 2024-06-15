@@ -1,3 +1,6 @@
+import React from "react";
+import IconTag from "./IconTag";
+
 export default function AddTodoForm({
     handleTodoSubmit,
     task,
@@ -55,7 +58,7 @@ export default function AddTodoForm({
                     type="submit"
                     className="bg-white flex items-center justify-center ml-5 w-[50px] h-[30px] xl:w-[55px] xl:h-[35px] self-center rounded-full md:hover:opacity-50 cursor-pointer transition-all"
                 >
-                    <i className="fa-solid fa-plus text-[15px] xl:text-[20px] text-[#018583] font-[900]"></i>
+                    <IconTag className="fa-solid fa-plus text-[15px] xl:text-[20px] text-[#018583] font-[900]" />
                 </button>
             </div>
         </form>

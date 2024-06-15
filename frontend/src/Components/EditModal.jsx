@@ -1,8 +1,9 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import axios from "axios";
+import IconTag from "./IconTag";
 
-export default function EditModa({
+export default function EditModal({
     showEditModal,
     identificator,
     setShowWarning,
@@ -93,10 +94,10 @@ export default function EditModa({
                 onChange={(e) => setEditValue(e.target.value)}
             />
             <button type="submit">
-                <i className="fa-solid fa-check text-lime-400"></i>
+                <IconTag className="fa-solid fa-check text-lime-400" />
             </button>
             <button onClick={handleTodoClose}>
-                <i className="fa-solid fa-close text-red-400"></i>
+                <IconTag className="fa-solid fa-close text-red-400" />
             </button>
         </form>
     );

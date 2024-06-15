@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import IconTag from "./IconTag";
 
 export default function MainMenu({
     setShowAddCategory,
@@ -43,7 +44,7 @@ export default function MainMenu({
                     : "Show category form"}
                 &nbsp;
                 {!showAddCategory && (
-                    <i className="fa-solid fa-arrow-down "></i>
+                    <IconTag className="fa-solid fa-arrow-down" />
                 )}
             </p>
             <div
@@ -66,14 +67,14 @@ export default function MainMenu({
                             onClick={handleCategoryAdd}
                             className="md:hover:text-lime-400 cursor-pointer text-[18px]"
                         >
-                            <i className="fa-solid fa-plus"></i>
+                            <IconTag className="fa-solid fa-plus" />
                         </button>
                         <button
                             type="submit"
                             onClick={handleCategoryDelete}
                             className="md:hover:text-red-500 cursor-pointer text-[18px]"
                         >
-                            <i className="fa-solid fa-close "></i>
+                            <IconTag className="fa-solid fa-close" />
                         </button>
                     </div>
                 </form>
