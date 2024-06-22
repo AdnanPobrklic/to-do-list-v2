@@ -314,7 +314,7 @@ export default function Main() {
     return isLoading ? (
         <div className="w-full grow flex flex-col gap-5 items-center justify-center text-center px-5">
             <p>
-                Please wait few minutes until our backend server activates
+                Please wait a minute or two until our backend server activates
                 (spinned off due to inactivity)
             </p>
             <ClockLoader color="#fff" />
