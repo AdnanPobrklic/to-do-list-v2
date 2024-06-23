@@ -1,5 +1,9 @@
 # To-Do List v2
 
+### Live Version
+
+You can access the live version of the app by visiting [this link](https://to-do-list-v2-usgi.onrender.com/).
+
 ## Project Architecture
 
 ```
@@ -47,10 +51,6 @@
         └── tailwind.config.js
         └── vite.config.js
 ```
-
-### Live Version
-
-You can access the live version of the app by visiting [this link](https://to-do-list-v2-usgi.onrender.com/).
 
 ## How to Start the Application
 
